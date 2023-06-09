@@ -1,1 +1,231 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+
+  <title>Oscillations of spring mass system (Group - 1)(D2)</title>
+</head>
+
+<body onload="load()" id="body">
+  <div id="loader">
+    <div class="load"></div>
+  </div>
+
+  <nav class="navbar background h-nav-resp">
+    <ul class="nav-list v-class-resp">
+      <div class="logo"><img
+          src="data:image/png;base64,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"
+          alt="logo"></div>
+      <li><a href="#simulation">Simulation</a></li>
+      <li><a href="#info">About Oscillations</a></li>
+      <li><a href="#damped">Damped Oscillation</a></li>
+      <li><a href="#application">Applications</a></li>
+    </ul>
+
+    <div class="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </nav>
+  <section class="firstSection" id="simulation">
+    <p class="sectionTag text-big">Oscillation of spring mass system</p>
+    <p class="sectionSubTag text-small">Physics PBL - (FY-B.tech) (D2)</p>
+    <div class="box-main">
+      <iframe src="https://trinket.io/embed/glowscript/297977d805?outputOnly=true&showInstructions=true" width="100%"
+        height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+    </div>
+
+
+    </div>
+  </section>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <hr color="white">
+  <br>
+  <br>
+
+  <br>
+  <br>
+
+  <section class="section section-left" id="info">
+    <div class="paras">
+
+      <p class="sectionTag text-big">What is Oscillations?</p>
+      <p class="sectionSubTag text-small">Oscillation is defined as the process of repeating variations of any quantity
+        or measure about its equilibrium value in time. Oscillation can also be defined as a periodic variation of a
+        matter between two values or about its central value.
+      </p>
+
+    </div>
+    <div class="thumbnail">
+      <!-- <img src="https://i.pinimg.com/originals/a8/f4/91/a8f4913e182ee815fc8398df20a10490.gif" alt="Oscillation" class="imgFluid"> -->
+    </div>
+  </section>
+  <section class="section">
+    <div class="paras">
+
+      <p class="sectionTag text-big"></p>
+      <p class="sectionSubTag text-small">A sine wave is a perfect example of oscillation.
+        Here the wave moves between two points about a central value.
+        The height or the maximum distance that the oscillation takes place is called the amplitude and the time taken
+        to complete one complete cycle is called the time period of the oscillation.
+        Frequency is the number of complete cycles that occur in a second. Frequency is the reciprocal of the time
+        period.
+      </p>
+      <p class="sectionSubTag text-small"><br>Most common examples for oscillation are the tides in the sea and the
+        movement of a simple pendulum in a clock.
+        Another example of oscillation is the movement of spring.
+        The vibration of strings in guitar and other string instruments are also examples of oscillations.
+
+
+    </div>
+    <div class="thumbnail">
+      <img src="https://www.flippingphysics.com/uploads/2/1/1/0/21103672/0319-animated-gif-1_6.gif" alt="sine wave"
+        class="imgFluid">
+    </div>
+  </section>
+  <br>
+  <br>
+  <hr color="white">
+  <br>
+  <section class="section">
+    <div class="paras">
+
+      <p class="sectionTag text-big"></p>
+      <p class="sectionSubTag text-small">General Equation of oscillations of spring mass system: <br></p>
+
+
+
+    </div>
+    <div class="eq">
+      <img src="https://cdn.discordapp.com/attachments/1077579139311222867/1077579793819770880/997510121523515502.png"
+        alt="sine wave" class="imgFluid eq">
+      <img src="https://cdn.discordapp.com/attachments/1077579139311222867/1077582480946774086/997510121523515502.png"
+        alt="sine wave" class="imgFluid eq">
+
+    </div>
+  </section>
+  <br>
+  <br>
+  <hr color="white">
+  <br>
+  <section class="section">
+    <div class="paras">
+
+      <p class="sectionTag text-big">Types Of Oscillations: <br> </p>
+      <div class="type">
+        <img src="https://cdn.discordapp.com/attachments/1077579139311222867/1077590572811952229/image.png"
+          alt="sine wave">
+      </div>
+
+
+    </div>
+  </section>
+  <br>
+  <br>
+  <hr color="white">
+  <br>
+
+  <section class="section" id="damped">
+    <div class="paras">
+
+      <p class="sectionTag text-big">Damped Oscillations<br> </p>
+
+
+
+    </div>
+    <div class="thumbnail">
+      <img src="https://thumbs.gfycat.com/IncomparableFatalKawala.webp" alt="sine wave" class="imgFluid">
+      <p class="sectionSubTag text-small">Under Damping</p>
+      <img src="https://thumbs.gfycat.com/GiantAridBufflehead.webp" alt="sine wave" class="imgFluid">
+      <p class="sectionSubTag text-small">Critically Damped</p>
+      <img src="https://thumbs.gfycat.com/SoreInsidiousDuckling.webp" alt="sine wave" class="imgFluid">
+      <p class="sectionSubTag text-small">Over Damped</p>
+
+    </div>
+
+  </section>
+
+
+  <br>
+  <br>
+  <hr color="white">
+  <br>
+  <section class="section section-left" id="application">
+    <div class="paras">
+
+      <p class="sectionTag text-big">Applications</p>
+      <p class="sectionSubTag text-small"><br>Application of SHM:<br>In bungee jumping, there are 2 stages, free fall
+        and after free fall. The simple harmonic motion in a bungee jump happens after free fall and that will be the
+        focus of this page. After free fall, the bungee cord will have been extended to its full length and essentially
+        acts as a spring, pulling the jumper back up, and hence the jumper will obey Hooke's law.</p>
+      <p class="sectionSubTag text-small"><br><br><b>Clock and Pendulum</b><br>All modern clocks nowadays applies
+        oscillation. Although the methods they use vary, all oscillating clocks can be divided into analogous parts.</p>
+      <p class="sectionSubTag text-small"><br><br><b>Forced Oscillations In real life</b><br>If the swing is pushed each
+        time it reaches a certain point it behaves as a forced oscillator and will continue to swing for as long as
+        energy is supplied
+      </p>
+      <p class="sectionSubTag text-small"><br><br><b>Forced oscillations in real life</b><br>In a moving coil
+        galvanometer , damping is due to the induced currents flowing in the metal frame. The opposing couple setting up
+        causes the coil to come to rest quickly.</p>
+
+    </div>
+    <div class="thumbnail">
+      <img
+        src="https://img.freepik.com/premium-vector/cute-preschool-boy-swinging-rope-happy-boy-having-fun-swing-cartoon-vector-illustration_723224-35.jpg?w=2000"
+        alt="Oscillation" class="imgFluid">
+    </div>
+  </section>
+  <br>
+  <br>
+  <hr color="white">
+  <br>
+  <br>
+
+  <section>
+    <p class="sectionTag text-big">Take a Quize</p>
+    <div id="quiz-btn">
+      <center><button class="btn">Take Now</button></center>
+    </div>
+  </section>
+
+  <br>
+  <br>
+  <br>
+  <hr color="white">
+  <br>
+  <footer>
+    <p class="text-footer">
+      <br>
+      <br>
+      <br>
+      <br>
+      Copyright &copy; 2023 Group - 1 (D2) - All rights reserved
+    </p>
+  </footer>
+
+  <centre> <cite style="color: cornsilk;">web by prathamesh (FY-D2)</cite></centre>
+  <script src="script.js"></script>
+  <script>
+    var loader = document.getElementById('loader');
+    var body = document.getElementById('body');
+    function load() {
+      loader.style.display = 'none';
+      body.style.display = 'block';
+    }
+  </script>
+</body>
+
+</html>
